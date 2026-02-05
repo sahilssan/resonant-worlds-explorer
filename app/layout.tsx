@@ -7,13 +7,13 @@ import { Navigation } from "@/components/navigation"
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  title: "Resonant Exoplanets | Physics-First AI for Transit Detection",
-  description: "Detect exoplanet transits with physics-first AI, understand model decisions with transparent explainability, and validate candidates with proven astrophysics checks.",
-  authors: [{ name: "Resonant Exoplanets Team" }],
-  keywords: ["exoplanets", "transit detection", "AI", "machine learning", "astronomy", "NASA", "Kepler", "TESS", "K2"],
+  title: "UnitAerospace | Components Detection & Analysis",
+  description: "AI-powered quality inspector tool to detect and resolve issues in aerospace components paperwork. FAA Form 8130-3 compliance analysis that finds errors, routes them to sellers, and turns quarantined parts into revenue.",
+  authors: [{ name: "UnitAerospace" }],
+  keywords: ["aerospace", "8130-3", "FAA", "compliance", "quality inspection", "aircraft parts", "aviation", "documentation"],
   openGraph: {
-    title: "Resonant Exoplanets | Physics-First AI for Transit Detection",
-    description: "Find new worlds with AI-powered transit detection and transparent scientific validation",
+    title: "UnitAerospace | Components Detection & Analysis",
+    description: "AI-powered 8130-3 analysis that finds compliance errors, routes them to the seller, and turns quarantined parts into revenue.",
     type: "website",
   },
   twitter: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0ea5e9",
+  themeColor: "#0d9488",
 }
 
 export default function RootLayout({

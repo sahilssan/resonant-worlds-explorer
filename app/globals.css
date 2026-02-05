@@ -4,48 +4,52 @@
 
 @layer base {
   :root {
-    /* Space-themed dark palette */
-    --background: 225 40% 6%;
+    /* UnitAerospace dark palette - deep navy/near-black */
+    --background: 220 25% 5%;
     --foreground: 210 40% 98%;
 
-    --card: 225 30% 10%;
+    --card: 220 25% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 225 35% 8%;
+    --popover: 220 25% 7%;
     --popover-foreground: 210 40% 98%;
 
-    /* Bright cyan accent for discoveries */
-    --primary: 190 95% 55%;
-    --primary-foreground: 225 40% 8%;
+    /* Teal/Blue for approved/clean states */
+    --primary: 185 70% 50%;
+    --primary-foreground: 220 25% 5%;
 
-    /* Deep purple for secondary actions */
-    --secondary: 260 45% 35%;
+    /* Deep slate for secondary */
+    --secondary: 220 20% 18%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 225 25% 18%;
-    --muted-foreground: 210 20% 65%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 210 15% 60%;
 
-    /* Orange accent for warnings/stars */
-    --accent: 25 90% 60%;
-    --accent-foreground: 225 40% 8%;
+    /* Red/Orange for issues/quarantine highlights */
+    --accent: 15 90% 55%;
+    --accent-foreground: 220 25% 5%;
+
+    /* Success green for clean/approved */
+    --success: 160 70% 45%;
+    --success-foreground: 220 25% 5%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 225 20% 20%;
-    --input: 225 25% 15%;
-    --ring: 190 95% 55%;
+    --border: 220 15% 18%;
+    --input: 220 20% 12%;
+    --ring: 185 70% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --sidebar-background: 225 35% 8%;
+    --sidebar-background: 220 25% 7%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 190 95% 55%;
-    --sidebar-primary-foreground: 225 40% 8%;
-    --sidebar-accent: 225 25% 18%;
+    --sidebar-primary: 185 70% 50%;
+    --sidebar-primary-foreground: 220 25% 5%;
+    --sidebar-accent: 220 20% 15%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 225 20% 20%;
-    --sidebar-ring: 190 95% 55%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 185 70% 50%;
   }
 }
 
@@ -86,23 +90,45 @@
     text-wrap: balance;
   }
 
-  .bg-gradient-space {
-    background: linear-gradient(135deg, hsl(225 40% 6%) 0%, hsl(260 45% 12%) 100%);
+  .bg-gradient-aerospace {
+    background: linear-gradient(135deg, hsl(220 25% 5%) 0%, hsl(220 30% 10%) 100%);
   }
 
-  .bg-gradient-cosmic {
-    background: linear-gradient(135deg, hsl(260 45% 20%) 0%, hsl(225 40% 15%) 50%, hsl(190 50% 20%) 100%);
+  .bg-gradient-hangar {
+    background: linear-gradient(180deg, hsl(220 25% 8%) 0%, hsl(220 25% 5%) 100%);
   }
 
-  .bg-gradient-data {
-    background: linear-gradient(90deg, hsl(190 95% 55% / 0.15) 0%, hsl(260 80% 60% / 0.15) 100%);
+  .bg-gradient-metrics {
+    background: linear-gradient(90deg, hsl(185 70% 50% / 0.08) 0%, hsl(220 25% 12%) 50%, hsl(15 90% 55% / 0.08) 100%);
   }
 
   .glow-primary {
-    box-shadow: 0 0 20px hsl(190 95% 55% / 0.3);
+    box-shadow: 0 0 30px hsl(185 70% 50% / 0.25);
   }
 
   .glow-accent {
-    box-shadow: 0 0 20px hsl(25 90% 60% / 0.3);
+    box-shadow: 0 0 20px hsl(15 90% 55% / 0.3);
+  }
+
+  .glow-success {
+    box-shadow: 0 0 20px hsl(160 70% 45% / 0.3);
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
   }
 }
