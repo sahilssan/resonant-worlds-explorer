@@ -8,10 +8,10 @@ export interface Candidate {
   duration: number;
   snr: number;
   validations: {
-    oddEven: boolean;
-    secondary: boolean;
-    shape: boolean;
-    centroid: boolean;
+    oddEvenDepth: boolean;
+    secondaryEclipse: boolean;
+    transitShape: boolean;
+    centroidShift: boolean;
   };
   baselineProbability: number;
   baselineFlags: string[];
@@ -19,7 +19,7 @@ export interface Candidate {
   simplifiedDescription?: string;
   isConfirmed: boolean;
   isFalsePositive: boolean;
-  confidence?: number;
+  confidence: number;
 }
 
 export const sampleCandidates: Candidate[] = [
@@ -33,16 +33,18 @@ export const sampleCandidates: Candidate[] = [
     duration: 3.4,
     snr: 14.2,
     validations: {
-      oddEven: true,
-      secondary: true,
-      shape: true,
-      centroid: true,
+      oddEvenDepth: true,
+      secondaryEclipse: true,
+      transitShape: true,
+      centroidShift: true,
     },
     baselineProbability: 0.73,
     baselineFlags: ["Low SNR warning", "Period alias possible"],
     description: "Earth-sized planet in 8-planet system. Classic pipeline flagged as low confidence due to shallow depth, but physics validation confirms genuine transit.",
+    simplifiedDescription: "A small Earth-sized world in a system with 8 planets!",
     isConfirmed: true,
     isFalsePositive: false,
+    confidence: 0.96,
   },
   {
     id: "KIC-8462852",
@@ -54,16 +56,18 @@ export const sampleCandidates: Candidate[] = [
     duration: 2.8,
     snr: 12.4,
     validations: {
-      oddEven: true,
-      secondary: true,
-      shape: true,
-      centroid: true,
+      oddEvenDepth: true,
+      secondaryEclipse: true,
+      transitShape: true,
+      centroidShift: true,
     },
     baselineProbability: 0.88,
     baselineFlags: ["Passed standard checks"],
     description: "High-confidence detection with strong periodic signal. Both pipelines agree this is a genuine planetary candidate.",
+    simplifiedDescription: "A promising planet candidate with very strong detection signals!",
     isConfirmed: true,
     isFalsePositive: false,
+    confidence: 0.94,
   },
   {
     id: "KIC-5812701",
@@ -75,16 +79,18 @@ export const sampleCandidates: Candidate[] = [
     duration: 8.6,
     snr: 7.8,
     validations: {
-      oddEven: true,
-      secondary: true,
-      shape: true,
-      centroid: true,
+      oddEvenDepth: true,
+      secondaryEclipse: true,
+      transitShape: true,
+      centroidShift: true,
     },
     baselineProbability: 0.52,
     baselineFlags: ["Long period - insufficient data", "Low SNR - requires vetting"],
     description: "Earth's older cousin in the habitable zone. Long period and shallow depth challenged classic pipeline, but our physics-first approach confidently validates the signal.",
+    simplifiedDescription: "An Earth-like planet in the habitable zone - it could have liquid water!",
     isConfirmed: true,
     isFalsePositive: false,
+    confidence: 0.91,
   },
   {
     id: "KIC-9704149",
@@ -96,16 +102,18 @@ export const sampleCandidates: Candidate[] = [
     duration: 2.1,
     snr: 18.6,
     validations: {
-      oddEven: false,
-      secondary: false,
-      shape: false,
-      centroid: true,
+      oddEvenDepth: false,
+      secondaryEclipse: false,
+      transitShape: false,
+      centroidShift: true,
     },
     baselineProbability: 0.82,
     baselineFlags: ["High confidence candidate"],
     description: "Eclipsing binary masquerading as planet. Strong signal fooled classic pipeline, but our odd/even depth check and secondary eclipse detection revealed the false positive.",
+    simplifiedDescription: "This turned out to be two stars orbiting each other, not a planet.",
     isConfirmed: false,
     isFalsePositive: true,
+    confidence: 0.82,
   },
 ];
 
